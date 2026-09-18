@@ -1,0 +1,54 @@
+# =========================
+# .NET / C# specific
+# =========================
+# Build results
+[Bb]in/
+[Oo]bj/
+[Oo]ut/
+[Ll]og/
+[Ll]ogs/
+
+bin/
+
+# Visual Studio / Rider / VS Code
+.vs/
+.vscode/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.userprefs
+*.sln.iml
+
+# NuGet Packages
+*.nupkg
+**/[Pp]ackages/*
+!**/[Pp]ackages/build/
+*.nuget.props
+*.nuget.targets
+
+# Entity Framework / Local DB
+*.mdf
+*.ldf
+*.ndf
+
+# =========================
+# OS Generated Files
+# =========================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# =========================
+# Project Specific / Secrets
+# =========================
+# Uncomment the following if you store secrets in appsettings.Development.json
+# appsettings.Development.json 
+
+# But DO keep appsettings.json and appsettings.Development.json if they only 
+# contain default/placeholder values. Often developers commit the Development 
+# version to share the setup with the team.

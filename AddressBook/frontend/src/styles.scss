@@ -1,24 +1,42 @@
 // Global tokens + the few primitives shared by more than one screen.
-// Everything else is scoped to its component.
+// Palette grounded in the live blackdotsolutions.com: their accent
+// (#DC1A57 — it's in their own icon filenames) on a light surface, with
+// a dark navy band bookending header/footer, matching their light-header
+// / dark-footer logo variants.
 
 :root {
   color-scheme: light;
 
-  --ink: #17212b;
-  --ink-soft: #4b5661;
-  --paper: #edf0f3;
+  --ink: #0f2733;
+  --ink-soft: #4d6470;
+  --paper: #f3f7fa;
   --surface: #ffffff;
-  --line: #ccd3da;
-  --field-border: #74818e; // 3:1+ against white, for input outlines
-  --accent: #1d4ed8;
-  --accent-strong: #1e40af;
+  --line: #dbe4ea;
+  --field-border: #70828c; // 3:1+ against white, for input outlines
+
+  --accent: #dc1a57;
+  --accent-strong: #b0123f;
+  --accent-wash: #fdeaf1;
+
+  --brand: #156476;
+  --brand-wash: #e3eef0;
+
+  --navy: #0c1e2b;
+  --navy-line: #1f3542;
+  --navy-ink-soft: #b7c7ce;
+
   --danger: #b42318;
   --danger-wash: #fef3f2;
-  --airmail-red: #d92d20;
 
-  --radius: 6px;
-  --font-ui: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-  --font-label: 'Iowan Old Style', 'Palatino Linotype', Palatino, Georgia, serif;
+  --radius: 8px;
+  --font-ui:
+    'Manrope',
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    sans-serif;
+  --font-label: var(--font-ui); // one typeface throughout — no serif
 }
 
 *,
@@ -31,13 +49,15 @@ body {
   margin: 0;
   background: var(--paper);
   color: var(--ink);
-  font: 1rem/1.5 var(--font-ui);
+  font: 1rem/1.55 var(--font-ui);
 }
 
 h1 {
   margin: 0 0 1rem;
   font-size: clamp(1.5rem, 1.25rem + 1.2vw, 2rem);
-  line-height: 1.2;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  line-height: 1.15;
 }
 
 :focus-visible {
@@ -60,9 +80,10 @@ h1 {
   border: 1px solid transparent;
   border-radius: var(--radius);
   font: inherit;
-  font-weight: 600;
+  font-weight: 700;
   text-decoration: none;
   cursor: pointer;
+  transition: background-color 120ms ease, border-color 120ms ease, opacity 120ms ease;
 }
 
 .button--primary {
@@ -83,6 +104,10 @@ h1 {
   border-color: var(--field-border);
   background: var(--surface);
   color: var(--ink);
+
+  &:hover {
+    border-color: var(--ink);
+  }
 }
 
 .actions {
@@ -96,7 +121,6 @@ h1 {
   justify-content: flex-end;
 }
 
-// Visually hidden, still read by screen readers.
 .sr-only {
   position: absolute;
   width: 1px;

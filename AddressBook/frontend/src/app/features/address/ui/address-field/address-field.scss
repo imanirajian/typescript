@@ -1,0 +1,49 @@
+:host {
+  display: block;
+}
+
+.field {
+  display: grid;
+  gap: 0.25rem;
+}
+
+.field__label {
+  font-weight: 600;
+}
+
+.field__optional {
+  margin-inline-start: 0.25rem;
+  font-weight: 400;
+  color: var(--ink-soft);
+}
+
+.field__hint {
+  margin: 0;
+  font-size: 0.875rem;
+  color: var(--ink-soft);
+}
+
+.field__input {
+  width: 100%;
+  min-height: 2.75rem; // comfortable touch target
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--field-border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: inherit;
+  font: inherit;
+}
+
+.field--invalid .field__input {
+  border-color: var(--danger);
+  box-shadow: inset 0 0 0 1px var(--danger);
+}
+
+.field__errors {
+  font-size: 0.875rem;
+  color: var(--danger);
+
+  p {
+    margin: 0;
+  }
+}

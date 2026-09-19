@@ -1,0 +1,68 @@
+:host {
+  display: block;
+}
+
+.label {
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+// The one decorative moment: an airmail border, because this is a postal label.
+.label__stripe {
+  height: 0.625rem;
+  background: repeating-linear-gradient(
+    -45deg,
+    var(--airmail-red) 0 0.75rem,
+    var(--surface) 0.75rem 1.25rem,
+    var(--accent) 1.25rem 2rem,
+    var(--surface) 2rem 2.5rem
+  );
+}
+
+.label__lines {
+  margin: 0;
+  padding: 1.5rem 1.5rem 1.25rem;
+  font-family: var(--font-label);
+  font-size: 1.25rem;
+  line-height: 1.5;
+}
+
+.line {
+  display: block;
+  overflow-wrap: anywhere;
+}
+
+.line--name {
+  font-weight: 700;
+}
+
+.line--postcode {
+  margin-top: 0.5rem;
+  letter-spacing: 0.06em;
+}
+
+.label__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 0.75rem;
+  margin: 0;
+  padding: 0.875rem 1.5rem;
+  border-top: 1px dashed var(--line);
+  font-size: 0.875rem;
+  color: var(--ink-soft);
+
+  dt {
+    font-weight: 600;
+  }
+
+  dd {
+    margin: 0;
+  }
+
+  code {
+    font-family: ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
+    overflow-wrap: anywhere;
+  }
+}

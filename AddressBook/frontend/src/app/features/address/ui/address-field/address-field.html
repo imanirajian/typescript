@@ -1,0 +1,30 @@
+<div class="field" [class.field--invalid]="showErrors()">
+  <label class="field__label" [for]="inputId()">
+    {{ label() }}
+    @if (optional()) {
+      <span class="field__optional">(optional)</span>
+    }
+  </label>
+
+  @if (hint(); as text) {
+    <p class="field__hint" [id]="hintId()">{{ text }}</p>
+  }
+
+  <input
+    class="field__input"
+    type="text"
+    [id]="inputId()"
+    [formField]="field()"
+    [attr.autocomplete]="autocomplete()"
+    [attr.aria-invalid]="showErrors() ? 'true' : null"
+    [attr.aria-describedby]="describedBy()"
+  />
+
+  <div class="field__errors" [id]="errorId()" aria-live="polite">
+    @if (showErrors()) {
+      @for (error of state().errors(); track error.kind) {
+        <p>{{ error.message ?? 'Enter a valid value.' }}</p>
+      }
+    }
+  </div>
+</div>

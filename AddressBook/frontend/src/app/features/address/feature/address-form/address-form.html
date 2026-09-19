@@ -1,0 +1,68 @@
+<section class="page">
+  <h1>Add an address</h1>
+
+  @if (submitError(); as message) {
+    <app-error-banner [message]="message" />
+  }
+
+  <form class="form" [formRoot]="addressForm">
+    <div class="grid">
+      <app-address-field
+        class="span-6"
+        inputId="addressee"
+        label="Addressee"
+        hint="For example, Mrs. Elizabeth White"
+        autocomplete="name"
+        [field]="addressForm.addressee"
+      />
+      <app-address-field
+        class="span-6"
+        inputId="street1"
+        label="Street 1"
+        autocomplete="address-line1"
+        [field]="addressForm.street1"
+      />
+      <app-address-field
+        class="span-6"
+        inputId="street2"
+        label="Street 2"
+        [optional]="true"
+        autocomplete="address-line2"
+        [field]="addressForm.street2"
+      />
+      <app-address-field
+        class="span-3"
+        inputId="town"
+        label="Town"
+        autocomplete="address-level2"
+        [field]="addressForm.town"
+      />
+      <app-address-field
+        class="span-3"
+        inputId="county"
+        label="County"
+        [optional]="true"
+        autocomplete="address-level1"
+        [field]="addressForm.county"
+      />
+      <app-address-field
+        class="span-3"
+        inputId="postcode"
+        label="Postcode"
+        hint="5 to 8 letters or numbers"
+        autocomplete="postal-code"
+        [field]="addressForm.postcode"
+      />
+    </div>
+
+    <div class="actions actions--end">
+      <button type="submit" class="button button--primary" [disabled]="addressForm().submitting()">
+        @if (addressForm().submitting()) {
+          Saving…
+        } @else {
+          Save address
+        }
+      </button>
+    </div>
+  </form>
+</section>

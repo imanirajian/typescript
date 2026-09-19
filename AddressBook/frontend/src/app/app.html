@@ -1,0 +1,17 @@
+<header class="app-header">
+  <div class="app-header__inner">
+    <span class="app-header__brand">Address book</span>
+
+    <nav class="app-header__nav" aria-label="Primary">
+      <a routerLink="/create" routerLinkActive="is-active" ariaCurrentWhenActive="page">
+        New address
+      </a>
+    </nav>
+
+    <app-address-lookup />
+  </div>
+</header>
+
+<main>
+  <router-outlet />
+</main>

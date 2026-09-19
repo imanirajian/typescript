@@ -1,0 +1,44 @@
+.app-header {
+  border-bottom: 1px solid var(--line);
+  background: var(--surface);
+}
+
+.app-header__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 1.25rem;
+  max-width: 40rem;
+  margin-inline: auto;
+  padding: 0.5rem 1rem;
+}
+
+.app-header__brand {
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+
+.app-header__nav a {
+  padding: 0.5rem 0;
+  color: var(--ink-soft);
+  text-decoration: none;
+
+  &.is-active {
+    color: var(--ink);
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 0.3em;
+  }
+}
+
+app-address-lookup {
+  margin-inline-start: auto;
+}
+
+// Narrow screens: the lookup takes its own full-width row.
+@media (max-width: 39.99rem) {
+  app-address-lookup {
+    flex: 1 1 100%;
+    margin-inline-start: 0;
+  }
+}

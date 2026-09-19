@@ -1,0 +1,13 @@
+<form class="lookup" role="search" [formRoot]="lookupForm">
+  <label class="sr-only" for="lookup-id">Find an address by ID</label>
+  <input
+    id="lookup-id"
+    class="lookup__input"
+    type="text"
+    placeholder="Find by address ID"
+    autocomplete="off"
+    spellcheck="false"
+    [formField]="lookupForm.id"
+  />
+  <button type="submit" class="button button--quiet">Find</button>
+</form>

@@ -1,0 +1,44 @@
+.form {
+  padding: 1.25rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+// Mobile first: one column.
+.grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1rem 1.25rem;
+}
+
+.actions {
+  margin-top: 1.5rem;
+
+  .button {
+    width: 100%;
+  }
+}
+
+// From tablet up: a six-column grid so Town/County and Postcode pair up.
+@media (min-width: 40rem) {
+  .form {
+    padding: 2rem;
+  }
+
+  .grid {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+
+  .span-6 {
+    grid-column: span 6;
+  }
+
+  .span-3 {
+    grid-column: span 3;
+  }
+
+  .actions .button {
+    width: auto;
+  }
+}

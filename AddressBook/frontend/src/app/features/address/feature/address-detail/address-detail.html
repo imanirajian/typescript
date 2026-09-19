@@ -1,0 +1,22 @@
+<section class="page">
+  <h1>Address details</h1>
+
+  @if (addressResource.isLoading()) {
+    <app-loading-indicator label="Loading address…" />
+  } @else if (failure(); as problem) {
+    <app-error-banner [message]="problem.message" />
+    <div class="actions">
+      @if (problem.kind !== 'not-found') {
+        <button type="button" class="button button--primary" (click)="addressResource.reload()">
+          Try again
+        </button>
+      }
+      <a class="button button--quiet" routerLink="/create">Add an address</a>
+    </div>
+  } @else if (address(); as current) {
+    <app-address-card [address]="current" />
+    <div class="actions">
+      <a class="button button--quiet" routerLink="/create">Add another address</a>
+    </div>
+  }
+</section>

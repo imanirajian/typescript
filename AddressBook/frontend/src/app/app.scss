@@ -10,24 +10,36 @@
   gap: 0.5rem 1.25rem;
   max-width: 40rem;
   margin-inline: auto;
-  padding: 0.5rem 1rem;
+  padding: 0.75rem 1rem;
 }
 
 .app-header__brand {
   font-size: 1.125rem;
-  font-weight: 700;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+
+  &::before {
+    content: '';
+    display: inline-block;
+    width: 0.55em;
+    height: 0.55em;
+    margin-right: 0.5em;
+    border-radius: 2px;
+    background: var(--accent);
+    vertical-align: middle;
+  }
 }
 
 .app-header__nav a {
   padding: 0.5rem 0;
   color: var(--ink-soft);
   text-decoration: none;
+  font-weight: 600;
+  border-bottom: 2px solid transparent;
 
   &.is-active {
     color: var(--ink);
-    font-weight: 600;
-    text-decoration: underline;
-    text-underline-offset: 0.3em;
+    border-bottom-color: var(--accent);
   }
 }
 
@@ -35,10 +47,36 @@ app-address-lookup {
   margin-inline-start: auto;
 }
 
-// Narrow screens: the lookup takes its own full-width row.
 @media (max-width: 39.99rem) {
   app-address-lookup {
     flex: 1 1 100%;
     margin-inline-start: 0;
   }
+}
+
+:host {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
+.app-footer {
+  background: var(--navy);
+  color: var(--navy-ink-soft);
+  border-top: 1px solid var(--navy-line);
+}
+
+.app-footer__inner {
+  max-width: 40rem;
+  margin-inline: auto;
+  padding: 1.25rem 1rem;
+  font-size: 0.875rem;
+}
+
+.app-footer a {
+  color: #fff;
 }

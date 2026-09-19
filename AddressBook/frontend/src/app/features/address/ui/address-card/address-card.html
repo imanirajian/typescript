@@ -1,23 +1,19 @@
 <article class="label" aria-label="Postal address">
-  <div class="label__stripe" aria-hidden="true"></div>
-
   <p class="label__lines">
     <span class="line line--name">{{ address().addressee }}</span>
     <span class="line">{{ address().street1 }}</span>
     @if (address().street2; as street2) {
-      <span class="line">{{ street2 }}</span>
+    <span class="line">{{ street2 }}</span>
     }
     <span class="line">{{ address().town }}</span>
     @if (address().county; as county) {
-      <span class="line">{{ county }}</span>
+    <span class="line">{{ county }}</span>
     }
     <span class="line line--postcode">{{ postcode() }}</span>
   </p>
 
   <dl class="label__meta">
     <dt>Address ID</dt>
-    <dd>
-      <code>{{ address().addressId }}</code>
-    </dd>
+    <dd><code>{{ address().addressId }}</code></dd>
   </dl>
 </article>

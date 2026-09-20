@@ -22,6 +22,7 @@ describe('AddressLookup', () => {
   async function submitWith(value: string) {
     input().value = value;
     input().dispatchEvent(new Event('input'));
+    fixture.detectChanges(); // render the typed value first, as a real keystroke would
     root().querySelector<HTMLButtonElement>('button[type="submit"]')!.click();
     await settle();
   }

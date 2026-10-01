@@ -322,3 +322,57 @@ The application otherwise deliberately avoids adding infrastructure that is not 
 - no additional address-management features
 
 The goal is to demonstrate production-quality Angular practices while keeping the implementation proportional to the small problem being solved.
+
+## The entire system in one picture
+
+                         ┌──────────────────────────┐
+                         │        Browser           │
+                         │      Angular 22          │
+                         │                          │
+                         │  Create Address          │
+                         │       │                  │
+                         │       ▼                  │
+                         │  AddressForm             │
+                         │       │                  │
+                         │       ▼                  │
+                         │  Validation              │
+                         │       │                  │
+                         │       ▼                  │
+                         │  AddressApi              │
+                         └─────────┬────────────────┘
+                                   │
+                              HTTP POST
+                                   │
+                                   ▼
+                    ┌──────────────────────────┐
+                    │       .NET 8 API         │
+                    │                          │
+                    │ POST /address            │
+                    │ GET  /address/{id}       │
+                    │                          │
+                    │ FluentValidation         │
+                    │ ConcurrentDictionary     │
+                    └────────────┬─────────────┘
+                                 │
+                           Address created
+                                 │
+                                 ▼
+                          { addressId: ... }
+                                 │
+                                 ▼
+                        Angular navigates to
+                            /address/{id}
+                                 │
+                                 ▼
+                    ┌──────────────────────────┐
+                    │     AddressDetail        │
+                    │                          │
+                    │ route :id                │
+                    │      ↓                   │
+                    │ httpResource             │
+                    │      ↓                   │
+                    │ GET /address/{id}        │
+                    └────────────┬─────────────┘
+                                 │
+                                 ▼
+                            AddressCard

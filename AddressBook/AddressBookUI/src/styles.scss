@@ -1,16 +1,11 @@
 // Global tokens + the few primitives shared by more than one screen.
 //
-// Palette taken from the Blackdot "Book a demo" page: white header, pale
-// blue-grey page, light-blue form panels with deep-teal text, pink for
-// buttons, red for validation errors, and a dark-teal footer / promo bar.
-//
 // Token NAMES are unchanged from the previous version so component
 // stylesheets keep working; only the values moved. New tokens are marked (new).
 
 :root {
   color-scheme: light;
 
-  // Text — values copied from blackdotsolutions.com's own tokens
   --ink: #0e3e49; // headings (--colour-blue-darker)
   --body: #146474; // (new) body copy + labels (--colour-blue-dark)
   --ink-soft: #146474;

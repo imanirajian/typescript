@@ -62,6 +62,24 @@ npm run build
 
 For the assessment, the important verification is that the application can be installed, tested, built and run against the supplied .NET API.
 
+Summary:
+
+* Development
+
+`npm start`
+
+* Development build
+
+`npm run build`
+
+* Production build
+
+`npm run prod`
+
+* Tests
+
+`npm test`
+
 ## What to try
 
 ### 1. Create an address

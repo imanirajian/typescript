@@ -107,7 +107,6 @@ app-address-lookup {
 .app-footer {
   flex: none; // pinned at the bottom
   border-top: 1px solid var(--navy-line);
-  // Darker teal with a lighter diagonal wedge on the left
   background: linear-gradient(112deg, var(--navy-light) 0 22%, var(--navy) 22%);
   color: var(--navy-ink-soft);
 }

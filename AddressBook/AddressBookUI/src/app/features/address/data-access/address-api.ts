@@ -1,6 +1,6 @@
 import { HttpClient, httpResource } from '@angular/common/http';
 import { Injectable, InjectionToken, inject } from '@angular/core';
-import { environment } from '../../../core/environments/environment.development';
+import { environment } from '../../../core/environments/environment';
 import type { UkAddress, UkAddressBody } from './address.model';
 import { Observable } from 'rxjs';
 
